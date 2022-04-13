@@ -855,23 +855,6 @@ $(".case").on("click", function() {
 
   // FIN MÓDULO PROGRAMACIONES
 
-  // UPLOAD PICTURE PROFILE
-   // function readURL(input) {
-   //   if (input.files && input.files[0]) {
-   //     var reader = new FileReader();
-   //     reader.onload = function(e) {
-   //       $('#imagePreviewCard').css('background-image', 'url(' + e.target.result + ')');
-   //       $('#imagePreviewCard').hide();
-   //       $('#imagePreviewCard').fadeIn(650);
-   //     }
-   //     reader.readAsDataURL(input.files[0]);
-   //   }
-   // }
-   //
-   // $("#imageUpload").change(function() {
-   //   readURL(this);
-   // });
-
    $('#imgFileCardOpcAsociadas').change(function(){
     var curElement = $('#imageCardOpcAsociadas');
     console.log(curElement);

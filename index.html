@@ -280,6 +280,21 @@
 
 						<div class="form-row">
 
+							<div class="wrap-img-preview">
+								<div class="imageWrapper">
+									<img id="imageLogoEmpresa" class="img-default">
+								</div>
+
+								<div class="content-info-upload-img">
+									<div class="label-upload-img">
+										Logo de la empresa
+									</div>
+									<button class="file-upload btn">
+										<input type="file" id="imgFileLogoEmpresa" class="file-input">Agregar imágen
+									</button>
+								</div>
+							</div>
+
 							<div class="form-group col-12">
 								<label for="inputNameEnterprise">Nombre Empresa</label>
 								<input type="text" class="form-control" id="inputNameEnterprise">
@@ -290,6 +305,22 @@
 								<label for="inputCodigoEjecutivo">Vigencia</label>
 								<input type="text" name="date_range" class="form-control rangePicker">
 							</div>
+
+							<fieldset class="form-group">
+								<label>Tipo de generación</label>
+								<div class="custom-control custom-radio form-check-inline">
+									<input type="radio" id="radioTypeGeneration1" name="customRadio2" class="custom-control-input" checked="">
+									<label class="custom-control-label" for="radioTypeGeneration1">
+										PDF’s Individuales
+									</label>
+								</div>
+								<div class="custom-control custom-radio form-check-inline">
+									<input type="radio" id="radioTypeGeneration2" name="customRadio2" class="custom-control-input">
+									<label class="custom-control-label" for="radioTypeGeneration2">
+										PDF’s agrupados por proveedor
+									</label>
+								</div>
+							</fieldset>
 						</div>
 
 					</form>
