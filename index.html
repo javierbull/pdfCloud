@@ -57,26 +57,7 @@
 
 				<div class="container-fluid">
 
-					<!-- <div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Buscar" class="form-control">
-							</div>
-						</form>
-					</div> -->
-
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						<!-- <li class="nav-item toggle-nav-search hidden-caret">
-							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
-								<i class="fa fa-search"></i>
-							</a>
-						</li> -->
-
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
@@ -89,15 +70,11 @@
 										<div class="user-box">
 											<div class="u-text">
 												<h4>Guilherme Neyra</h4>
-												<!-- <p class="text-muted">guilhermeneyra@gmail.com</p> -->
 											</div>
 										</div>
 									</li>
 									<li>
 										<div class="dropdown-divider"></div>
-										<!-- <a class="dropdown-item" href="#" onclick="openTab(event, 'perfil')">Mi Perfil</a>
-										<a class="dropdown-item" href="#">Inbox</a>
-										<div class="dropdown-divider"></div> -->
 										<a class="dropdown-item" href="#">Cerrar sesión</a>
 									</li>
 								</div>
@@ -128,8 +105,8 @@
 								<ul class="nav nav-collapse">
 
 									<li>
-										<a href="#" onclick="openTab(event, 'correos')" id="defaultOpen">
-											<span class="sub-item">Envío de Correos</span>
+										<a href="#" onclick="openTab(event, 'generadorPDF')" id="defaultOpen">
+											<span class="sub-item">Generador de PDF's</span>
 										</a>
 									</li>
 
@@ -150,7 +127,7 @@
 				<!-- MÓDULO OPERACIONES -->
 
 				<!-- Content Correos -->
-				<div id="correos" class="tabcontent">
+				<div id="generadorPDF" class="tabcontent">
 
 					<div class="header-content">
 						<button type="button"  class="btn btn-outline btn-icon" data-toggle="modal" data-target="#modalFiltrarCorreos">
@@ -164,7 +141,7 @@
 					<div class="card card-content">
 
 						<div class="header-card-content">
-							<h1 class="title-content">Correos enviados</h1>
+							<h1 class="title-content">Factura <span>F901-320</span></h1>
 							<button type="button" name="button" class="btn btn-outline-rounded d-none" data-toggle="modal" data-target="#modalReporteCorreos">
 								Generar reporte
 							</button>
@@ -172,49 +149,44 @@
 
 						<div class="dtable-responsive">
 							<div class="wrap-table">
-								<table class="table table-hover dtable" id="tableCorreos">
+								<table class="table table-hover dtable" id="tableFacturaPdf">
 									<thead>
 										<tr>
 											<th scope="col">#</th>
-											<th scope="col">Empresa</th>
-											<th scope="col">Tipo</th>
-											<th scope="col">Subtipo</th>
-											<th scope="col">Método</th>
-											<th scope="col">Fecha de envío</th>
-											<th scope="col">Hora de envío</th>
-											<th scope="col">Responsable</th>
+											<th scope="col">Código</th>
+											<th scope="col">Producto</th>
+											<th scope="col">Proveedor</th>
+											<th scope="col">Fin vigencia</th>
 										</tr>
 									</thead>
 									<tbody class="body-table">
 										<tr class="row-table">
 											<th scope="row">1</th>
-											<td>BCP</td>
-											<td>PROGRAMACIÓN BEE</td>
-											<td>2 COMUNICADO</td>
-											<td>EMPRESA</td>
-											<td>12/01/2022</td>
-											<td>10:00 AM</td>
-											<td>ERICK ALIAGA</td>
+											<td>RKT0683590</td>
+											<td>COMBO FAMILIAR CON ENSALADA</td>
+											<td>ROCKY’S</td>
+											<td>15-07-2022</td>
 										</tr>
 										<tr class="row-table">
 											<th scope="row">2</th>
-											<td>INTERBANK</td>
-											<td>PROGRAMACIÓN BEE</td>
-											<td>1 COMUNICADO</td>
-											<td>PERSONAL</td>
-											<td>12/01/2022</td>
-											<td>10:30 AM</td>
-											<td>CARLOS TAMASHIRO</td>
+											<td>RKE8297920</td>
+											<td>COMBO FAMILIAR CON ENSALADA</td>
+											<td>ROCKY’S</td>
+											<td>15-07-2022</td>
 										</tr>
 										<tr class="row-table">
 											<th scope="row">3</th>
-											<td>TODAS</td>
-											<td>PROGRAMACIÓN BEE</td>
-											<td>1 COMUNICADO</td>
-											<td>MASIVO</td>
-											<td>12/01/2022</td>
-											<td>11:00 AM</td>
-											<td>ERICK ALIAGA</td>
+											<td>RKE8297955</td>
+											<td>COMBO PERSONAL CON ENSALADA</td>
+											<td>ROCKY’S</td>
+											<td>15-07-2022</td>
+										</tr>
+										<tr class="row-table">
+											<th scope="row">4</th>
+											<td>MON8297911</td>
+											<td>CORTE DE CABELLO</td>
+											<td>MONTALVO FOR MEN</td>
+											<td>15-07-2022</td>
 										</tr>
 									</tbody>
 								</table>
@@ -226,123 +198,6 @@
 				</div>
 				<!-- Fin content Correos -->
 
-				<!-- Content Enviar Correos-->
-				<div id="content-enviarCorreos" class="tabcontent">
-
-					<div class="row header-content">
-						<div class="col-lg-12">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item volverCorreosEnviados">
-										<a href="#">
-											<span class="material-icons-outlined">
-												arrow_back
-											</span>
-										</a>
-									</li>
-									<li class="breadcrumb-item volverCorreosEnviados"><a href="#">Correos enviados</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Envío de correos</li>
-								</ol>
-							</nav>
-						</div>
-					</div>
-
-					<div class="container">
-
-						<div class="row justify-content-center">
-							<div class="card card-content card-tabContent">
-								<div class="header-card-content">
-									<h1 class="title-content">Envío de correos</h1>
-								</div>
-								<div class="body-card-content">
-									<form>
-										<div class="form-group">
-											<label for="inputTipoCorreo">Tipo</label>
-											<select id="inputTipoCorreo" class="form-control select2">
-												<option selected>SELECCIONE</option>
-												<option>PROGRAMACIÓN BEE</option>
-												<option>MARCAS</option>
-												<option>OFERTAS DEL MES</option>
-												<option>CALENDARIO COMERCIAL</option>
-												<option>ACTUALIZACIÓN DE DATOS</option>
-											</select>
-											<small class="text-help">Campo obligatorio</small>
-										</div>
-
-										<div class="form-group">
-											<label for="inputSubtipoCorreo">Subtipo</label>
-											<select id="inputSubtipoCorreo" class="form-control select2">
-												<option selected>SELECCIONE</option>
-												<option>1 COMUNICADO</option>
-												<option>2 COMUNICADO</option>
-											</select>
-											<small class="text-help">Campo obligatorio</small>
-										</div>
-
-										<div class="form-group">
-											<label for="inputMetodoCorreo">Método</label>
-											<select id="inputMetodoCorreo" class="form-control select2">
-												<option selected>SELECCIONE</option>
-												<option>MASIVO</option>
-												<option value="metodoEmpresa">EMPRESA</option>
-												<option value="metodoPersonal">PERSONAL</option>
-											</select>
-											<small class="text-help">Campo obligatorio</small>
-										</div>
-
-										<div id="metodoEmpresa" class="drop-down-show-hide">
-											<div class="form-group">
-												<label for="inputEmpresas">Empresa</label>
-												<select id="inputEmpresas" class="form-control select2">
-													<option selected>SELECCIONE</option>
-													<option>BCP</option>
-													<option>INTERBANK</option>
-													<option>SUNAT</option>
-												</select>
-												<small class="text-help">Campo obligatorio</small>
-											</div>
-										</div>
-										<div id="metodoPersonal" class="drop-down-show-hide">
-											<div class="form-group">
-												<label for="inputCorreoPersonal">Correo personal</label>
-												<input type="email" class="form-control" id="inputCorreoPersonal">
-												<small class="text-help">Campo obligatorio</small>
-											</div>
-										</div>
-
-										<div class="form-group">
-											<label for="inputAsuntoCorreo">Asunto</label>
-											<input type="text" class="form-control" id="inputAsuntoCorreo">
-											<small class="text-help">Campo obligatorio</small>
-										</div>
-
-										<div class="form-group">
-											<label for="inputAsuntoCorreo">Correo de prueba</label>
-											<div class="input-group">
-												<input type="email" class="form-control"  aria-describedby="button-addon2">
-												<div class="input-group-addon2">
-													<button class="btn btn-outline" type="button" id="button-addon2">Enviar</button>
-												</div>
-											</div>
-										</div>
-
-									</form>
-								</div>
-
-								<div class="footer-card-content">
-									<button type="button" name="button" class="btn btn-link volverCorreosEnviados">
-										Cancelar
-									</button>
-									<button type="button" name="button" class="btn btn-principal" data-toggle="modal" data-target="#modal-confirmacionEnviarCorreos">
-										Enviar correos
-									</button>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<!-- Fin Content Enviar Correos -->
 				<!-- FIN MÓDULO OPERACIONES -->
 
 			</div>
