@@ -3329,17 +3329,19 @@ td {
 
 .imageWrapper {
   background-color: var(--bg-content);
-  background-image: url(../img/products/product-default.svg);
+  /* background-image: url(../img/products/product-default.svg); */
   border: 1px solid var(--george);
   width: 8rem;
   height: 8rem;
   border-radius: .6rem;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .imageWrapper img {
-  height: 100%;
-  height: 100%;
+  width: 90%;
 }
 
 .content-info-upload-img {
