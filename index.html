@@ -130,11 +130,14 @@
 				<div id="generadorPDF" class="tabcontent">
 
 					<div class="header-content">
-						<button type="button"  class="btn btn-outline btn-icon" data-toggle="modal" data-target="#modalFiltrarCorreos">
-							Filtrar
+						<button type="button"  class="btn btn-outline btn-icon btn-icon-left" data-toggle="modal" data-target="#modalBuscarFactura">
+							<span class="material-icons-outlined">
+								search
+							</span>
+							Buscar Factura
 						</button>
 						<button type="button" id="btn-enviarCorreo" class="btn btn-principal">
-							Nuevo
+							Generar PDF's
 						</button>
 					</div>
 
@@ -218,11 +221,11 @@
 
 	<!-- MODALS -->
 
-	<div class="modal fade" id="modalFiltrarCorreos" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal fade" id="modalBuscarFactura" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		<div class="modal-dialog  modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">Filtrar</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle">Buscar Factura</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -234,46 +237,14 @@
 						<div class="form-row">
 
 							<div class="form-group col-12">
-								<label for="inputStateEmpresa">Empresa</label>
-								<select id="inputStateEmpresa" class="form-control select2">
-									<option selected>TODAS LAS EMPRESAS</option>
-									<option>BCP</option>
-									<option>INTERBANK</option>
-									<option>SUNAT</option>
-								</select>
+								<label for="inputSerieFactura">Serie</label>
+								<input type="text" class="form-control" id="inputSerieFactura">
 								<small class="text-help">Campo obligatorio</small>
 							</div>
 
 							<div class="form-group col-12">
-								<label for="inputTipoCorreo">Tipo</label>
-								<select id="inputTipoCorreo" class="form-control select2">
-									<option selected>SELECCIONE</option>
-									<option>PROGRAMACIÓN BEE</option>
-									<option>MARCAS</option>
-									<option>OFERTAS DEL MES</option>
-								</select>
-								<small class="text-help">Campo obligatorio</small>
-							</div>
-
-							<div class="form-group col-12">
-								<label for="inputSubtipoCorreo">Subtipo</label>
-								<select id="inputSubtipoCorreo" class="form-control select2">
-									<option selected>SELECCIONE</option>
-									<option>MASIVO</option>
-									<option>1 COMUNICADO</option>
-									<option>2 COMUNICADO</option>
-								</select>
-								<small class="text-help">Campo obligatorio</small>
-							</div>
-
-							<div class="form-group col-12">
-								<label for="inputMetodoCorreo">Tipo</label>
-								<select id="inputMetodoCorreo" class="form-control select2">
-									<option selected>SELECCIONE</option>
-									<option>MASIVO</option>
-									<option>EMPRESA</option>
-									<option>PERSONAL</option>
-								</select>
+								<label for="inputNumberfactura">Número</label>
+								<input type="text" class="form-control" id="inputNumberfactura">
 								<small class="text-help">Campo obligatorio</small>
 							</div>
 
@@ -281,23 +252,13 @@
 								<label for="inputCodigoEjecutivo">Rango de fechas</label>
 								<input type="text" name="date_range" class="form-control rangePicker">
 							</div>
-
-							<div class="form-group col-12">
-								<label for="inputState">Responsable</label>
-								<select id="inputState" class="form-control select2">
-									<option selected>SELECCIONE</option>
-									<option>CARLOS TAMASHIRO</option>
-									<option>ERICK ALIAGA</option>
-								</select>
-								<small class="text-help">Campo obligatorio</small>
-							</div>
 						</div>
 
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-principal" data-dismiss="modal">Filtrar</button>
+					<button type="button" class="btn btn-principal" data-dismiss="modal">Buscar</button>
 				</div>
 
 			</div>

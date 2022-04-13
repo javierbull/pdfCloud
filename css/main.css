@@ -182,8 +182,12 @@ a:hover, a:focus {
   align-items: center;
 }
 
-.btn-icon span {
+.btn-icon-right span {
   margin-left: .5rem;
+}
+
+.btn-icon-left span {
+  margin-right: .5rem;
 }
 
 /* Fin Botones */
