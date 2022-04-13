@@ -136,7 +136,7 @@
 							</span>
 							Buscar Factura
 						</button>
-						<button type="button" id="btn-enviarCorreo" class="btn btn-principal">
+						<button type="button" id="btn-enviarCorreo" class="btn btn-principal" data-toggle="modal" data-target="#modalGenerarPdf">
 							Generar PDF's
 						</button>
 					</div>
@@ -145,9 +145,9 @@
 
 						<div class="header-card-content">
 							<h1 class="title-content">Factura <span>F901-320</span></h1>
-							<button type="button" name="button" class="btn btn-outline-rounded d-none" data-toggle="modal" data-target="#modalReporteCorreos">
+							<!-- <button type="button" name="button" class="btn btn-outline-rounded d-none" data-toggle="modal" data-target="#modalReporteCorreos">
 								Generar reporte
-							</button>
+							</button> -->
 						</div>
 
 						<div class="dtable-responsive">
@@ -250,6 +250,44 @@
 
 							<div class="form-group col-12">
 								<label for="inputCodigoEjecutivo">Rango de fechas</label>
+								<input type="text" name="date_range" class="form-control rangePicker">
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-principal" data-dismiss="modal">Buscar</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalGenerarPdf" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Generar PDF's</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form>
+
+						<div class="form-row">
+
+							<div class="form-group col-12">
+								<label for="inputNameEnterprise">Nombre Empresa</label>
+								<input type="text" class="form-control" id="inputNameEnterprise">
+								<small class="text-help">Campo obligatorio</small>
+							</div>
+
+							<div class="form-group col-12">
+								<label for="inputCodigoEjecutivo">Vigencia</label>
 								<input type="text" name="date_range" class="form-control rangePicker">
 							</div>
 						</div>
