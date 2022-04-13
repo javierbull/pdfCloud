@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Bee Cloud</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<meta name="description" content="Sistema Bee Cloud">
+	<link rel="icon" href="img/icons/favicon.png" type="image/x-icon" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+	<!-- Fonts and icons -->
+	<script src="js/plugin/webfont/webfont.min.js"></script>
+
+	<link href="css/fonts.min.css" rel="stylesheet" type="text/css">
+	<!-- CSS Files -->
+	<link rel="stylesheet" type="text/css" href="js/plugin/datatables/datatables.css" />
+	<link rel="stylesheet" type="text/css" href="js/plugin/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+	<link href="js/plugin/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+	<link href="js/plugin/timepicker/jquery.timepicker.css" rel="stylesheet" media="all">
+	<link rel="stylesheet" href="js/plugin/select2/select2.css">
+	<link rel="stylesheet" href="js/plugin/select2/select2-bootstrap4.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/mq.css">
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header">
+
+				<a href="index.html" class="logo d-flex align-items-center">
+					<img src="img/logos/imagotipo-bee.png" alt="Bee Cloud" class="navbar-brand mr-2">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="icon-menu"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="icon-menu"></i>
+					</button>
+				</div>
+			</div>
+			<!-- End Logo Header -->
+
+			<!-- Navbar Header -->
+			<nav class="navbar navbar-header navbar-expand-lg">
+
+				<div class="container-fluid">
+
+					<!-- <div class="collapse" id="search-nav">
+						<form class="navbar-left navbar-form nav-search mr-md-3">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button type="submit" class="btn btn-search pr-1">
+										<i class="fa fa-search search-icon"></i>
+									</button>
+								</div>
+								<input type="text" placeholder="Buscar" class="form-control">
+							</div>
+						</form>
+					</div> -->
+
+					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+						<!-- <li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li> -->
+
+						<li class="nav-item dropdown hidden-caret">
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
+								<div class="avatar-sm">
+									<img src="img/users/profile1.jpg" alt="profile-pic" class="avatar-img rounded-circle">
+								</div>
+							</a>
+							<ul class="dropdown-menu dropdown-user dropdown-menu-right animated fadeIn">
+								<div class="dropdown-user-scroll scrollbar-outer">
+									<li>
+										<div class="user-box">
+											<div class="u-text">
+												<h4>Guilherme Neyra</h4>
+												<!-- <p class="text-muted">guilhermeneyra@gmail.com</p> -->
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="dropdown-divider"></div>
+										<!-- <a class="dropdown-item" href="#" onclick="openTab(event, 'perfil')">Mi Perfil</a>
+										<a class="dropdown-item" href="#">Inbox</a>
+										<div class="dropdown-divider"></div> -->
+										<a class="dropdown-item" href="#">Cerrar sesión</a>
+									</li>
+								</div>
+							</ul>
+						</li>
+
+					</ul>
+
+				</div>
+			</nav>
+			<!-- End Navbar -->
+		</div>
+
+		<!-- Sidebar -->
+		<div class="sidebar">
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+
+					<ul class="nav nav-primary" id="myDIV">
+
+						<li class="nav-item btn-item">
+							<a data-toggle="collapse" href="#operaciones">
+								<i class="fas fa-copy"></i>
+								<p>Operaciones</p>
+								<span class="caret"></span>
+							</a>
+							<div class="collapse" id="operaciones">
+								<ul class="nav nav-collapse">
+
+									<li>
+										<a href="#" onclick="openTab(event, 'correos')" id="defaultOpen">
+											<span class="sub-item">Envío de Correos</span>
+										</a>
+									</li>
+
+								</ul>
+							</div>
+						</li>
+
+					</ul>
+
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+		<div class="main-panel">
+			<div class="content">
+
+				<!-- MÓDULO OPERACIONES -->
+
+				<!-- Content Correos -->
+				<div id="correos" class="tabcontent">
+
+					<div class="header-content">
+						<button type="button"  class="btn btn-outline btn-icon" data-toggle="modal" data-target="#modalFiltrarCorreos">
+							Filtrar
+						</button>
+						<button type="button" id="btn-enviarCorreo" class="btn btn-principal">
+							Nuevo
+						</button>
+					</div>
+
+					<div class="card card-content">
+
+						<div class="header-card-content">
+							<h1 class="title-content">Correos enviados</h1>
+							<button type="button" name="button" class="btn btn-outline-rounded d-none" data-toggle="modal" data-target="#modalReporteCorreos">
+								Generar reporte
+							</button>
+						</div>
+
+						<div class="dtable-responsive">
+							<div class="wrap-table">
+								<table class="table table-hover dtable" id="tableCorreos">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">Empresa</th>
+											<th scope="col">Tipo</th>
+											<th scope="col">Subtipo</th>
+											<th scope="col">Método</th>
+											<th scope="col">Fecha de envío</th>
+											<th scope="col">Hora de envío</th>
+											<th scope="col">Responsable</th>
+										</tr>
+									</thead>
+									<tbody class="body-table">
+										<tr class="row-table">
+											<th scope="row">1</th>
+											<td>BCP</td>
+											<td>PROGRAMACIÓN BEE</td>
+											<td>2 COMUNICADO</td>
+											<td>EMPRESA</td>
+											<td>12/01/2022</td>
+											<td>10:00 AM</td>
+											<td>ERICK ALIAGA</td>
+										</tr>
+										<tr class="row-table">
+											<th scope="row">2</th>
+											<td>INTERBANK</td>
+											<td>PROGRAMACIÓN BEE</td>
+											<td>1 COMUNICADO</td>
+											<td>PERSONAL</td>
+											<td>12/01/2022</td>
+											<td>10:30 AM</td>
+											<td>CARLOS TAMASHIRO</td>
+										</tr>
+										<tr class="row-table">
+											<th scope="row">3</th>
+											<td>TODAS</td>
+											<td>PROGRAMACIÓN BEE</td>
+											<td>1 COMUNICADO</td>
+											<td>MASIVO</td>
+											<td>12/01/2022</td>
+											<td>11:00 AM</td>
+											<td>ERICK ALIAGA</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+				<!-- Fin content Correos -->
+
+				<!-- Content Enviar Correos-->
+				<div id="content-enviarCorreos" class="tabcontent">
+
+					<div class="row header-content">
+						<div class="col-lg-12">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb">
+									<li class="breadcrumb-item volverCorreosEnviados">
+										<a href="#">
+											<span class="material-icons-outlined">
+												arrow_back
+											</span>
+										</a>
+									</li>
+									<li class="breadcrumb-item volverCorreosEnviados"><a href="#">Correos enviados</a></li>
+									<li class="breadcrumb-item active" aria-current="page">Envío de correos</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+
+					<div class="container">
+
+						<div class="row justify-content-center">
+							<div class="card card-content card-tabContent">
+								<div class="header-card-content">
+									<h1 class="title-content">Envío de correos</h1>
+								</div>
+								<div class="body-card-content">
+									<form>
+										<div class="form-group">
+											<label for="inputTipoCorreo">Tipo</label>
+											<select id="inputTipoCorreo" class="form-control select2">
+												<option selected>SELECCIONE</option>
+												<option>PROGRAMACIÓN BEE</option>
+												<option>MARCAS</option>
+												<option>OFERTAS DEL MES</option>
+												<option>CALENDARIO COMERCIAL</option>
+												<option>ACTUALIZACIÓN DE DATOS</option>
+											</select>
+											<small class="text-help">Campo obligatorio</small>
+										</div>
+
+										<div class="form-group">
+											<label for="inputSubtipoCorreo">Subtipo</label>
+											<select id="inputSubtipoCorreo" class="form-control select2">
+												<option selected>SELECCIONE</option>
+												<option>1 COMUNICADO</option>
+												<option>2 COMUNICADO</option>
+											</select>
+											<small class="text-help">Campo obligatorio</small>
+										</div>
+
+										<div class="form-group">
+											<label for="inputMetodoCorreo">Método</label>
+											<select id="inputMetodoCorreo" class="form-control select2">
+												<option selected>SELECCIONE</option>
+												<option>MASIVO</option>
+												<option value="metodoEmpresa">EMPRESA</option>
+												<option value="metodoPersonal">PERSONAL</option>
+											</select>
+											<small class="text-help">Campo obligatorio</small>
+										</div>
+
+										<div id="metodoEmpresa" class="drop-down-show-hide">
+											<div class="form-group">
+												<label for="inputEmpresas">Empresa</label>
+												<select id="inputEmpresas" class="form-control select2">
+													<option selected>SELECCIONE</option>
+													<option>BCP</option>
+													<option>INTERBANK</option>
+													<option>SUNAT</option>
+												</select>
+												<small class="text-help">Campo obligatorio</small>
+											</div>
+										</div>
+										<div id="metodoPersonal" class="drop-down-show-hide">
+											<div class="form-group">
+												<label for="inputCorreoPersonal">Correo personal</label>
+												<input type="email" class="form-control" id="inputCorreoPersonal">
+												<small class="text-help">Campo obligatorio</small>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="inputAsuntoCorreo">Asunto</label>
+											<input type="text" class="form-control" id="inputAsuntoCorreo">
+											<small class="text-help">Campo obligatorio</small>
+										</div>
+
+										<div class="form-group">
+											<label for="inputAsuntoCorreo">Correo de prueba</label>
+											<div class="input-group">
+												<input type="email" class="form-control"  aria-describedby="button-addon2">
+												<div class="input-group-addon2">
+													<button class="btn btn-outline" type="button" id="button-addon2">Enviar</button>
+												</div>
+											</div>
+										</div>
+
+									</form>
+								</div>
+
+								<div class="footer-card-content">
+									<button type="button" name="button" class="btn btn-link volverCorreosEnviados">
+										Cancelar
+									</button>
+									<button type="button" name="button" class="btn btn-principal" data-toggle="modal" data-target="#modal-confirmacionEnviarCorreos">
+										Enviar correos
+									</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- Fin Content Enviar Correos -->
+				<!-- FIN MÓDULO OPERACIONES -->
+
+			</div>
+			<!-- fin content -->
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="copyright ml-auto">
+						Desarrollado por
+						<a href="#">
+							<img src="img/icons/logo-footer.png" alt="Colmena">
+						</a>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+	</div>
+
+	<!-- MODALS -->
+
+	<div class="modal fade" id="modalFiltrarCorreos" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Filtrar</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+					<form>
+
+						<div class="form-row">
+
+							<div class="form-group col-12">
+								<label for="inputStateEmpresa">Empresa</label>
+								<select id="inputStateEmpresa" class="form-control select2">
+									<option selected>TODAS LAS EMPRESAS</option>
+									<option>BCP</option>
+									<option>INTERBANK</option>
+									<option>SUNAT</option>
+								</select>
+								<small class="text-help">Campo obligatorio</small>
+							</div>
+
+							<div class="form-group col-12">
+								<label for="inputTipoCorreo">Tipo</label>
+								<select id="inputTipoCorreo" class="form-control select2">
+									<option selected>SELECCIONE</option>
+									<option>PROGRAMACIÓN BEE</option>
+									<option>MARCAS</option>
+									<option>OFERTAS DEL MES</option>
+								</select>
+								<small class="text-help">Campo obligatorio</small>
+							</div>
+
+							<div class="form-group col-12">
+								<label for="inputSubtipoCorreo">Subtipo</label>
+								<select id="inputSubtipoCorreo" class="form-control select2">
+									<option selected>SELECCIONE</option>
+									<option>MASIVO</option>
+									<option>1 COMUNICADO</option>
+									<option>2 COMUNICADO</option>
+								</select>
+								<small class="text-help">Campo obligatorio</small>
+							</div>
+
+							<div class="form-group col-12">
+								<label for="inputMetodoCorreo">Tipo</label>
+								<select id="inputMetodoCorreo" class="form-control select2">
+									<option selected>SELECCIONE</option>
+									<option>MASIVO</option>
+									<option>EMPRESA</option>
+									<option>PERSONAL</option>
+								</select>
+								<small class="text-help">Campo obligatorio</small>
+							</div>
+
+							<div class="form-group col-12">
+								<label for="inputCodigoEjecutivo">Rango de fechas</label>
+								<input type="text" name="date_range" class="form-control rangePicker">
+							</div>
+
+							<div class="form-group col-12">
+								<label for="inputState">Responsable</label>
+								<select id="inputState" class="form-control select2">
+									<option selected>SELECCIONE</option>
+									<option>CARLOS TAMASHIRO</option>
+									<option>ERICK ALIAGA</option>
+								</select>
+								<small class="text-help">Campo obligatorio</small>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-principal" data-dismiss="modal">Filtrar</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modal-confirmacionEnviarCorreos" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Confirmar envío</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p class="de-question">
+						Empresa: <span>BCP</span> <br>
+						Tipo de correo: <span>1ER RECORDATORIO</span>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+					<button type="button" class="btn btn-principal" data-dismiss="modal" data-toggle="modal" data-target="#modal-enviandoCorreos">Confirmar</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modal-enviandoCorreos" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Enviando correos</h5>
+					<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button> -->
+				</div>
+				<div class="modal-body">
+					<p class="de-question">
+						Empresa: <span>BCP</span> <br>
+						Tipo de correo: <span>1ER RECORDATORIO</span>
+					</p>
+					<div class="progress mb-3">
+						<div class="progress-bar progress-bar-striped progress-bar-animated w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+					</div>
+					<p>
+						<span>50%</span> de correos enviados
+					</p>
+					<p>
+						<span class="badge-confirmado">
+							Se enviaron 1000 correos
+						</span>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-principal" data-dismiss="modal">Listo</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- FIN MODALS -->
+
+
+
+
+	<!--   Core JS Files   -->
+	<script src="js/bootstrap/jquery.3.2.1.min.js"></script>
+	<script src="js/bootstrap/popper.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+	<!-- <script src="js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script> -->
+
+	<!-- jQuery Scrollbar -->
+	<script src="js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+	<!-- Chart JS -->
+	<script src="js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- Datatables -->
+	<script type="text/javascript" src="js/plugin/datatables/datatables.min.js"></script>
+
+	<script src="js/plugin/datepicker/moment.js"></script>
+	<script src="js/plugin/datepicker/daterangepicker.js"></script>
+	<script src="js/plugin/timepicker/jquery.timepicker.js"></script>
+	<script src="js/plugin/select2/select2.js"></script>
+
+	<script src="js/chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.5/tinymce.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
