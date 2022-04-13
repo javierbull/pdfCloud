@@ -327,61 +327,28 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-principal" data-dismiss="modal">Buscar</button>
+					<button type="button" class="btn btn-principal" data-dismiss="modal" data-toggle="modal" data-target="#modal-download">Generar PDF's</button>
 				</div>
 
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="modal-confirmacionEnviarCorreos" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	<div class="modal fade" id="modal-download" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
 		<div class="modal-dialog  modal-dialog-scrollable" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">Confirmar envío</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<p class="de-question">
-						Empresa: <span>BCP</span> <br>
-						Tipo de correo: <span>1ER RECORDATORIO</span>
-					</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
-					<button type="button" class="btn btn-principal" data-dismiss="modal" data-toggle="modal" data-target="#modal-enviandoCorreos">Confirmar</button>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="modal-enviandoCorreos" data-backdrop="static" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-		<div class="modal-dialog  modal-dialog-scrollable" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLongTitle">Enviando correos</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle">Descargando</h5>
 					<!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button> -->
 				</div>
 				<div class="modal-body">
-					<p class="de-question">
-						Empresa: <span>BCP</span> <br>
-						Tipo de correo: <span>1ER RECORDATORIO</span>
-					</p>
 					<div class="progress mb-3">
 						<div class="progress-bar progress-bar-striped progress-bar-animated w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
 					<p>
-						<span>50%</span> de correos enviados
-					</p>
-					<p>
-						<span class="badge-confirmado">
-							Se enviaron 1000 correos
-						</span>
+						<span>75%</span>
 					</p>
 				</div>
 				<div class="modal-footer">
