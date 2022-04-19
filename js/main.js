@@ -1020,6 +1020,13 @@ $('#imgFilePdfOpcDescriptivas').change(function(){
         $(".accordion-more").toggleClass("show hide");
       });
 
+      // Show hide check logo empresa PDF
+      $('#showBox').click(function() {
+        $(".wrap-img-preview-pdf").toggleClass("flex hide");
+      });
+      // End Show hide check logo empresa PDF
+
+
 });
 
 

@@ -50,6 +50,12 @@ jQuery(document).ready(function($) {
          bsOverlay.removeClass('show');
       return false;
    });
+
+   // Show hide check logo empresa PDF
+   $('#showBox').click(function() {
+     $(".box").toggle();
+   });
+   // End Show hide check logo empresa PDF
 });
 
 // SIDEBAR OFF CANVAS

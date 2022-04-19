@@ -3317,12 +3317,16 @@ td {
   display: none;
 }
 
+.flex {
+  display: flex;
+}
+
 /* En stepper form */
 /* Upload images product */
 
-.wrap-img-preview {
+.wrap-img-preview-pdf {
   /* background-color: lavender; */
-  display: flex;
+  /* display: flex; */
   align-items: center;
   margin-bottom: 1.5rem;
 }
@@ -3402,7 +3406,6 @@ td {
 
   .sortable-list {
     list-style: none;
-
   }
 
   .sortable-list .list-item {
